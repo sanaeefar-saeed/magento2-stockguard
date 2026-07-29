@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="stockguard_low_stock_email_template"
+              label="Stock Guard: Low Stock Alert"
+              file="low_stock.html"
+              type="html"
+              module="Saeed_StockGuard"
+              area="adminhtml"/>
+</config>

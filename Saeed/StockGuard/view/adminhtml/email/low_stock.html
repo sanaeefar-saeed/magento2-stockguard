@@ -1,0 +1,40 @@
+<!--@subject {{trans "Stock Guard: %count product(s) low on stock" count=$count}} @-->
+<!--@vars {
+"var count":"Low stock item count",
+"var store_name":"Store name",
+"var threshold":"Threshold"
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr>
+        <td>
+            <h2>{{trans "Low-Stock Alert"}}</h2>
+            <p>
+                {{trans "%count product(s) on %store_name are at or below the threshold of %threshold units." count=$count store_name=$store_name threshold=$threshold}}
+            </p>
+            <table border="1" cellpadding="6" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th align="left">{{trans "SKU"}}</th>
+                        <th align="left">{{trans "Name"}}</th>
+                        <th align="right">{{trans "Qty"}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{depend items}}
+                    {{for item in items}}
+                    <tr>
+                        <td>{{var item.getSku()}}</td>
+                        <td>{{var item.getName()}}</td>
+                        <td align="right">{{var item.getQty()}}</td>
+                    </tr>
+                    {{/for}}
+                {{/depend}}
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

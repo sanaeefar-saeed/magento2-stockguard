@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/stockguard/low-stock" method="GET">
+        <service class="Saeed\StockGuard\Api\LowStockRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Saeed_StockGuard::config"/>
+        </resources>
+    </route>
+</routes>

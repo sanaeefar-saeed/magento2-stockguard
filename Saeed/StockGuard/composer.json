@@ -1,0 +1,24 @@
+{
+    "name": "saeed/module-stock-guard",
+    "description": "Low-stock monitoring for Magento 2 / Adobe Commerce with REST + GraphQL APIs, admin alerts, and scheduled scans.",
+    "type": "magento2-module",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Saeed Sanaeefar",
+            "email": "sanaeefar.saeed@gmail.com",
+            "role": "Senior Magento & Headless Commerce Engineer"
+        }
+    ],
+    "require": {
+        "php": "~8.1.0||~8.2.0||~8.3.0",
+        "magento/framework": "*",
+        "magento/module-catalog": "*",
+        "magento/module-catalog-inventory": "*"
+    },
+    "autoload": {
+        "files": ["registration.php"],
+        "psr-4": { "Saeed\\StockGuard\\": "" }
+    }
+}

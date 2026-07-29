@@ -1,0 +1,23 @@
+# Saeed_StockGuard GraphQL schema
+# Exposes low-stock products for headless / PWA storefronts.
+
+type Query {
+    lowStockProducts(
+        threshold: Int @doc(description: "Override the configured low-stock threshold.")
+    ): LowStockResult
+    @resolver(class: "Saeed\\StockGuard\\Model\\Resolver\\LowStockProducts")
+    @doc(description: "Returns products at or below the configured stock threshold.")
+}
+
+type LowStockResult {
+    total_count: Int @doc(description: "Number of low-stock items returned.")
+    threshold: Int @doc(description: "Threshold used for this query.")
+    items: [LowStockItem] @doc(description: "The low-stock items.")
+}
+
+type LowStockItem {
+    sku: String
+    name: String
+    qty: Float
+    product_id: Int
+}

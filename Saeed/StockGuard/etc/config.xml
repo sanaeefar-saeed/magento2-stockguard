@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <stockguard>
+            <general>
+                <enabled>1</enabled>
+                <threshold>5</threshold>
+            </general>
+            <notification>
+                <email_enabled>1</email_enabled>
+                <recipient>admin@example.com</recipient>
+                <sender>general</sender>
+                <template>stockguard_low_stock_email_template</template>
+            </notification>
+        </stockguard>
+    </default>
+</config>
